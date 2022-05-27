@@ -1,18 +1,18 @@
 .data
-	msgNum1: .asciiz "\nDigite o número (entre 0 e 10): "
+	msgNum1: .asciiz "\nDigite o nÃºmero (entre 0 e 10): "
 	fatorialText: .asciiz "\nO Fatorial e: "
 .text
 main:
-# Entrando com os dados no v0 para dizer qual instrução será executada
+# Entrando com os dados no v0 para dizer qual instruÃ§Ã£o serÃ¡ executada
 	li $v0, 4 
-	la $a0, msgNum1 # Armazenando a mensagem no a0, que será chamado no syscall
+	la $a0, msgNum1 # Armazenando a mensagem no a0, que serÃ¡ chamado no syscall
 	syscall
 	
 	li $v0, 5
 	syscall
 	add $t0, $v0, 0 # entrada de dados
 	
-	# Validações de número
+	# ValidaÃ§Ãµes de nÃºmero
 	blt $t0, 0, main # caso seja menor que 0
 	bgt $t0, 10, main # caso seja maior que 10
 		
